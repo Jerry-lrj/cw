@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="{% url 'add' %}">新增</a>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>price</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for book in book_obj %}
+        <tr>
+            <td id="order_id">{{ book.pk }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.price }}</td>
+            <td>
+                <a href="{% url 'edit' book.pk %}">编辑</a>
+                <a href="{% url 'delete' book.pk %}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+</body>
+</html>

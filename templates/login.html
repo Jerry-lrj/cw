@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    账号：lrj
+    密码：123123
+</div>
+<form action="{% url 'login' %}" method="post" >
+    {% csrf_token %}
+    <div>
+        用户名<input type="text" name="username">
+    </div>
+    <div>
+         密码<input type="password" name="password">
+    </div>
+
+    <button>提交</button>
+</form>
+
+</body>
+</html>
